@@ -15,7 +15,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "email should be present" do
-    @user.email = "  "
+    @user.email = "   "
     assert_not @user.valid?
   end
 
@@ -52,8 +52,8 @@ class UserTest < ActiveSupport::TestCase
       assert_not duplicate_user.valid?
     end
 
-  test "passwors should have minimum length" do
+  test "passwords should have minimum length" do
     @user.password = @user.password_confirmation = "a" * 5
-    assert_not @user.valid?
+     assert_not @user.valid?
   end
 end
