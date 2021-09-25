@@ -3,7 +3,7 @@ require 'test_helper'
 class UsersEditTest < ActionDispatch::IntegrationTest
 
   def setup
-    @user = users(:benito)
+    @user       = users(:benito)
     @other_user = users(:beryl)
   end
 
@@ -22,9 +22,12 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     get edit_user_path(@user)
     log_in_as(@user)
     assert_redirected_to edit_user_url(@user)
-    name = 'Benito Sam'
+    name  = 'Benito Sam'
     email = 'beni@gmail.com'
-    patch user_path(@user), params: { user: { name: name, email: email, password: '', password_confirmation: '' } }
+    patch user_path(@user), params: { user: { name: name,
+                                              email: email,
+                                              password: '',
+                                              password_confirmation: '' } }
     assert_not flash.empty?
     assert_redirected_to @user
     @user.reload
