@@ -1,31 +1,34 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'bcrypt',         '3.1.13'
-gem 'bootsnap', '1.4.6', require: false
-gem 'bootstrap-sass', '3.4.1'
-gem 'bootstrap-will_paginate', '1.0.0'
-gem 'faker', '2.11.0'
-gem 'jbuilder', '2.10.0'
+gem 'active_storage_validations', '0.8.9'
+gem 'bcrypt',                     '3.1.13'
+gem 'bootsnap',                   '1.4.6', require: false
+gem 'bootstrap-sass',             '3.4.1'
+gem 'bootstrap-will_paginate',    '1.0.0'
+gem 'faker',                      '2.11.0'
+gem 'image_processing',           '1.9.3'
+gem 'jbuilder',                   '2.10.0'
+gem 'mini_magick',                '4.9.5'
 gem 'puma'
-gem 'rails', '6.1.4.1'
+gem 'rails',                      '6.1.4.1'
 gem 'rake'
 gem 'rexml'
-gem 'sass-rails', '6.0.0'
-gem 'turbolinks', '5.2.1'
-gem 'webpacker',  '4.2.2'
-gem 'will_paginate', '3.3.0'
+gem 'sass-rails',                 '6.0.0'
+gem 'turbolinks',                 '5.2.1'
+gem 'webpacker',                  '4.2.2'
+gem 'will_paginate',              '3.3.0'
 
 group :development, :test do
-  gem 'byebug',  '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'sqlite3', '1.4.2'
+  gem 'byebug',                   '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'sqlite3',                  '1.4.2'
 end
 
 group :development do
   gem 'listen'
-  gem 'spring',                '2.1.0'
-  gem 'spring-watcher-listen', '2.0.1'
-  gem 'web-console',           '4.0.2'
+  gem 'spring',                   '2.1.0'
+  gem 'spring-watcher-listen',    '2.0.1'
+  gem 'web-console',              '4.0.2'
 end
 
 group :test do
