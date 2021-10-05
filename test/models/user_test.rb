@@ -81,4 +81,32 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  test 'should follow and unfollow a user' do
+    benito = users(:benito)
+    beryl  = users(:beryl)
+    assert_not benito.following?(beryl)
+    benito.follow(beryl)
+    assert benito.following?(beryl)
+    assert beryl.followers.include?(benito)
+    benito.unfollow(beryl)
+    assert_not benito.following?(beryl)
+  end
+
+  test 'feed should have the right posts' do
+    benito = users(:benito)
+    beryl  = users(:beryl)
+    sam    = users(:sam)
+    # Post for followed user.
+    sam.microposts.each do |post_following|
+      assert benito.feed.include?(post_following)
+    end
+    # Post from self.
+    benito.microposts.each do |post_self|
+      assert benito.feed.include?(post_self)
+    end
+    # Post for unfollowed user.
+    beryl.microposts.each do |post_unfollowed|
+      assert_not benito.feed.include?(post_unfollowed)
+    end
+  end
 end

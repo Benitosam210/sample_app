@@ -19,6 +19,7 @@ gem 'turbolinks',                 '5.2.1'
 gem 'webpacker',                  '4.2.2'
 gem 'will_paginate',              '3.3.0'
 
+
 group :development, :test do
   gem 'byebug',                   '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3',                  '1.4.2'
@@ -39,11 +40,14 @@ group :test do
   gem 'minitest-reporters',       '1.3.8'
   gem 'rails-controller-testing', '1.0.4'
   gem 'selenium-webdriver'
-  gem 'webdrivers', '4.3.0'
+  gem 'test-unit'
+  gem 'webdrivers',               '4.3.0'
+
 
 end
 
 group :production do
+  gem 'aws-sdk-s3', '1.46.0', require: false
   gem 'pg', '1.2.3'
 end
 
@@ -52,3 +56,8 @@ end
 # Uncomment the following line if you're running Rails
 # on a native Windows system:
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+
+
+
